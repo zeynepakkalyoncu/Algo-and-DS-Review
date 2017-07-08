@@ -1,15 +1,10 @@
-//
-//  main.cpp
-//  Review
-//
-//  Created by Zeynep Akkalyoncu on 08/07/2017.
-//  Copyright © 2017 Zeynep Akkalyoncu. All rights reserved.
-//
-
 #include <iostream>
+#include "epi_sol.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    SinglyLinkedList<int> myList = randomListGenerate();
+    myList.printList();
+    
     return 0;
 }
