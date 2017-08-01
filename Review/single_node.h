@@ -6,17 +6,22 @@
 template <typename T>
 class SingleNode {
 public:
-    T _data;
-    SingleNode<T>* _next;
+    T data;
+    SingleNode<T>* next;
     
-    SingleNode() : _next(NULL) {};
-    SingleNode(T data) : _data(data), _next(NULL) {};
-    SingleNode(T data, SingleNode<T>* next) : _data(data), _next(next) {};
+    SingleNode() : next(NULL) {};
+    SingleNode(T data) : data(data), next(NULL) {};
+    SingleNode(T data, SingleNode<T>* next) : data(data), next(next) {};
+    /*
     SingleNode<T>* next() {
         return this->_next;
     }
+    T data() {
+        return this->_data;
+    }
+     */
     void printNode() {
-        std::cout << _data << std::endl;
+        std::cout << data << std::endl;
     }
     bool operator==(const SingleNode<T>& rhs) {
         return (this->data == rhs.data);

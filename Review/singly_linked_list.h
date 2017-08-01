@@ -14,21 +14,25 @@ public:
     
     SinglyLinkedList(std::vector<T> data) {
         this->_head = new SingleNode<T>(data[0]);
-        int size = data.size();
+        size_t size = data.size();
         SingleNode<T>* ptr = this->_head;
         for (int i = 1; i < size; i++) {
             SingleNode<T>* newNode = new SingleNode<T>(data[i]);
-            ptr->_next = newNode;
+            ptr->next = newNode;
             ptr = newNode;
         }
     }
     
     SinglyLinkedList(SingleNode<T>* head) {
-        this->__head = head;
+        this->_head = head;
     }
     
     SingleNode<T>* head() {
         return this->_head;
+    }
+    
+    void setHead(SingleNode<T>* head) {
+        this->_head = head;
     }
     
     bool isEmpty() {
@@ -58,18 +62,18 @@ public:
     
     SingleNode<T>* addToFront(T data) {
         SingleNode<T>* newNode = new SingleNode<T>(data);
-        newNode->next = this->head;
-        this->head = newNode;
+        newNode->next = this->_head;
+        this->_head = newNode;
         return newNode;
     }
     
     SingleNode<T>* addToEnd(T data) {
-        SingleNode<T>* ptr = this->head;
+        SingleNode<T>* ptr = this->_head;
         if (ptr == NULL) {
             // empty list
             SingleNode<T>* newNode = new SingleNode<T>(data);
-            this->head = newNode;
-            return this->head;
+            this->_head = newNode;
+            return this->_head;
         }
         while (ptr->next != NULL) {
             ptr = ptr->next;
@@ -175,20 +179,20 @@ public:
         SingleNode<T>* ptr = this->head;
         if (ptr != NULL) {
             // not empty list
-            if (ptr->next == NULL) {
-                // single element list
-                this->head = NULL;
-                delete ptr;
+            if (ptr->data == data) {
+                SingleNode<T>* delNode = this->head;
+                this->head = this->head->next;
+                delete delNode;
+                ptr = this->head;
             }
-            else {
-                while (ptr != NULL) {
-                    if ((ptr->next != NULL) && (ptr->next->data == data)) {
-                        SingleNode<T>* temp = ptr->next;
-                        ptr->next = ptr->next->next;
-                        delete temp;
-                    }
-                    ptr = ptr->next;
+            while (ptr->next != NULL) {
+                if (ptr->next->data == data) {
+                    // delete node
+                    SingleNode<T>* delNode = ptr->next;
+                    ptr->next = ptr->next->next;
+                    delete delNode;
                 }
+                ptr = ptr->next;
             }
         }
     }
@@ -196,8 +200,8 @@ public:
     void printList() {
         SingleNode<T>* ptr = this->_head;
         while (ptr != NULL) {
-            std::cout << ptr->_data << " ";
-            ptr = ptr->_next;
+            std::cout << ptr->data << " ";
+            ptr = ptr->next;
         }
         std::cout << std::endl;
     }
@@ -206,9 +210,115 @@ public:
         SingleNode<T>* ptr = this->_head;
         while (ptr != NULL) {
             SingleNode<T>* temp = ptr;
-            ptr = ptr->next();
+            ptr = ptr->next;
             delete temp;
         }
+    }
+    
+    // MERGE SORT
+    void split(SingleNode<T>*& head, SingleNode<T>*& front, SingleNode<T>*& back) {
+        
+        if ((head == NULL) || (head->next == NULL)) {
+            front = head;
+            back = NULL;
+        }
+        
+        else {
+            SingleNode<T> *s = head, *f = head;
+            
+            while (s && f && f->next) {
+                s = s->next;
+                f = f->next->next;
+            }
+            
+            front = head;
+            back = s->next;
+            s->next = NULL;
+            
+            /*front->printNode();
+            back->printNode();*/
+        }
+        
+    }
+    
+    SingleNode<T>* merge(SingleNode<T>*& ptr1, SingleNode<T>*& ptr2) {
+        SingleNode<T>* newPtr = NULL;
+        
+        if (!ptr1) return ptr2;
+        else if (!ptr2) return ptr1;
+        
+        if (ptr1->data <= ptr2->data) {
+            newPtr = ptr1;
+            newPtr->next = merge(ptr1->next, ptr2);
+        }
+        else {
+            newPtr = ptr2;
+            newPtr->next = merge(ptr1, ptr2->next);
+        }
+        
+        newPtr->next = NULL;
+        return newPtr;
+    }
+    
+    void merge_sort(SingleNode<T>* headPtr) {
+        SingleNode<T>* head = headPtr;
+        SingleNode<T> *l = NULL, *m = NULL;
+        
+        if (head && head->next) {
+            split(head, l, m);
+            merge_sort(l);
+            merge_sort(m);
+            headPtr = merge(l, m);
+        }
+    }
+    
+    // INSERTION SORT
+    // best - time: O(n) space: O(n)
+    // average - time: O(n^2) space: O(n)
+    // worst - time: O(n^2) space: O(n)
+    void insertion_sort() {
+    
+        SingleNode<T>* ptr = _head, *out_head = NULL;
+        
+        while (ptr) {
+            
+            if (!out_head) {
+                // empty linked list
+                out_head = new SingleNode<T>(ptr->data);
+            }
+            else if (!out_head->next) {
+                // single element
+                if (out_head->data > ptr->data) {
+                    SingleNode<T>* newHead = new SingleNode<T>(ptr->data);
+                    newHead->next = out_head;
+                    out_head = newHead;
+                }
+                else {
+                    SingleNode<T>* newNode = new SingleNode<T>(ptr->data);
+                    out_head->next = newNode;
+                }
+            }
+            else {
+                SingleNode<T>* ptr2 = out_head;
+                while (ptr2->next) {
+                    if (ptr2->next->data >= ptr->data) {
+                        SingleNode<T>* newNode = new SingleNode<T>(ptr->data);
+                        newNode->next = ptr2->next;
+                        ptr2->next = newNode;
+                        break;
+                    }
+                    ptr2 = ptr2->next;
+                }
+                if (!ptr2->next) {
+                    SingleNode<T>* newNode = new SingleNode<T>(ptr->data);
+                    ptr2->next = newNode;
+                }
+            }
+            
+            ptr = ptr->next;
+        }
+        
+        _head = out_head;
     }
 };
 
