@@ -4,7 +4,7 @@
 
 #include "sort.h"
 #include "utils.h"
-#include "chapter8.h"
+#include "chapter5.h"
 
 using namespace std;
 
@@ -18,7 +18,11 @@ int main(int argc, const char * argv[]) {
     int val;
     while (os1 >> val) vec1.push_back(val);*/
     
-    cout << fib_rec(1) << " " << fib_rec(2) << " " << fib_rec(3) << " " << fib_rec(4) << endl;
+    unsigned int m, n, i, j;
+    cin >> n >> m >> i >> j;
+    print_binary(n); print_binary(m); print_binary(i); print_binary(j);
+    
+    print_binary(copy_inside(n, m, i, j));
     
     return 0;
 }

@@ -20,6 +20,13 @@ void print_binary_long(unsigned long x) {
     cout << endl;
 }
 
+void print_binary(unsigned int x) {
+    for (int i = 31; i >= 0; i--) {
+        cout << ((x >> i) & 0x1);
+    }
+    cout << endl;
+}
+
 template <typename T>
 void print_vec(vector<T>& vec) {
     size_t size = vec.size();

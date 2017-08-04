@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		219764FC1F11229C00D45795 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 219764EE1F111AF100D45795 /* main.cpp */; };
-		219765071F18E6FE00D45795 /* chapter5.h in Sources */ = {isa = PBXBuildFile; fileRef = 219765061F18E6FE00D45795 /* chapter5.h */; };
+		219765071F18E6FE00D45795 /* epi_chapter5.h in Sources */ = {isa = PBXBuildFile; fileRef = 219765061F18E6FE00D45795 /* epi_chapter5.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		215AB1051F2E2D1A007DA598 /* chapter9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chapter9.h; sourceTree = "<group>"; };
 		215AB1061F306DD5007DA598 /* chapter8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chapter8.h; sourceTree = "<group>"; };
+		217BFEAA1F348A8600D72B01 /* chapter5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chapter5.h; sourceTree = "<group>"; };
 		219764EB1F111AF100D45795 /* Review */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Review; sourceTree = BUILT_PRODUCTS_DIR; };
 		219764EE1F111AF100D45795 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		219764F51F111B2000D45795 /* single_node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = single_node.h; sourceTree = "<group>"; };
@@ -34,7 +35,7 @@
 		219764FA1F111B8B00D45795 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		219765031F11379A00D45795 /* stack_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack_array.h; sourceTree = "<group>"; };
 		219765041F1137A400D45795 /* queue_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue_array.h; sourceTree = "<group>"; };
-		219765061F18E6FE00D45795 /* chapter5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chapter5.h; sourceTree = "<group>"; };
+		219765061F18E6FE00D45795 /* epi_chapter5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = epi_chapter5.h; sourceTree = "<group>"; };
 		21B8DF481F210DF700D37E7B /* sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sort.h; sourceTree = "<group>"; };
 		21B8DF491F24943400D37E7B /* search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search.h; sourceTree = "<group>"; };
 		21B8DF4A1F24A2B800D37E7B /* max_heap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = max_heap.h; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		21B8DF531F29ECDD00D37E7B /* binary_tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = binary_tree.h; sourceTree = "<group>"; };
 		21B8DF541F29ECEA00D37E7B /* bst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bst.h; sourceTree = "<group>"; };
 		21BAA8481F20AE60001CD225 /* chapter2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chapter2.h; sourceTree = "<group>"; };
+		21E8DE9E1F32038900E06F5C /* graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = graph.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				21B8DF521F29ECCD00D37E7B /* binary_node.h */,
 				21B8DF531F29ECDD00D37E7B /* binary_tree.h */,
 				21B8DF541F29ECEA00D37E7B /* bst.h */,
+				21E8DE9E1F32038900E06F5C /* graph.h */,
 			);
 			name = "Data Structures";
 			sourceTree = "<group>";
@@ -114,7 +117,7 @@
 		219765051F18E6EE00D45795 /* EPI */ = {
 			isa = PBXGroup;
 			children = (
-				219765061F18E6FE00D45795 /* chapter5.h */,
+				219765061F18E6FE00D45795 /* epi_chapter5.h */,
 			);
 			name = EPI;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 				21B8DF4F1F275A0200D37E7B /* chapter1.h */,
 				21BAA8481F20AE60001CD225 /* chapter2.h */,
 				21B8DF4D1F26106800D37E7B /* chapter3.h */,
+				217BFEAA1F348A8600D72B01 /* chapter5.h */,
 				215AB1061F306DD5007DA598 /* chapter8.h */,
 				215AB1051F2E2D1A007DA598 /* chapter9.h */,
 			);
@@ -199,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				219764FC1F11229C00D45795 /* main.cpp in Sources */,
-				219765071F18E6FE00D45795 /* chapter5.h in Sources */,
+				219765071F18E6FE00D45795 /* epi_chapter5.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
