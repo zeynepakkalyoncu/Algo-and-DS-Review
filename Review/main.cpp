@@ -18,11 +18,10 @@ int main(int argc, const char * argv[]) {
     int val;
     while (os1 >> val) vec1.push_back(val);*/
     
-    unsigned int m, n, i, j;
-    cin >> n >> m >> i >> j;
-    print_binary(n); print_binary(m); print_binary(i); print_binary(j);
-    
-    print_binary(copy_inside(n, m, i, j));
+    unsigned int a;
+    cin >> a;
+    print_binary(a);
+    print_binary(swap_bits(a));
     
     return 0;
 }

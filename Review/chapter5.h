@@ -23,4 +23,13 @@ int copy_inside(unsigned int n, unsigned int m, unsigned int i, unsigned int j) 
 
 ///////////////
 
+// time: O(1) space: O(n) - 5 instructions
+unsigned int swap_bits(unsigned int x) {
+    return ((x & 0xAAAA) >> 0x1) | ((x & 0x5555) << 0x1);
+}
+
+///////////////
+
+// time: O(n) space: O(1)
+
 #endif
