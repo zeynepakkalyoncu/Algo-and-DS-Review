@@ -24,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2123D6241F3859990081C4E2 /* priority_queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = priority_queue.h; sourceTree = "<group>"; };
+		2123D6251F3864C60081C4E2 /* disjoint_set.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = disjoint_set.h; sourceTree = "<group>"; };
 		215AB1051F2E2D1A007DA598 /* chapter9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chapter9.h; sourceTree = "<group>"; };
 		215AB1061F306DD5007DA598 /* chapter8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chapter8.h; sourceTree = "<group>"; };
 		217BFEAA1F348A8600D72B01 /* chapter5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chapter5.h; sourceTree = "<group>"; };
@@ -110,6 +112,8 @@
 				21B8DF531F29ECDD00D37E7B /* binary_tree.h */,
 				21B8DF541F29ECEA00D37E7B /* bst.h */,
 				21E8DE9E1F32038900E06F5C /* graph.h */,
+				2123D6241F3859990081C4E2 /* priority_queue.h */,
+				2123D6251F3864C60081C4E2 /* disjoint_set.h */,
 			);
 			name = "Data Structures";
 			sourceTree = "<group>";

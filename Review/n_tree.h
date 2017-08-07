@@ -91,8 +91,19 @@ public:
         
     }
     
+    // time: O(n) space: O(n)
+    void deleteTrees(NTreeNode<T>* node) {
+        if (node) {
+            std::vector<NTreeNode<T>* >& children = node->_children;
+            for (auto child : children) {
+                deleteTrees(child);
+            }
+            delete node;
+        }
+    }
+    
     ~NTree() {
-        
+        deleteTrees(_root);
     }
 };
 

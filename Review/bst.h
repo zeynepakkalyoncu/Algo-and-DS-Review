@@ -45,8 +45,24 @@ public:
         }
     }
     
-    BinaryNode<T>* inorderPredessor() {
-        
+    
+    BinaryNode<T>* inorderPredessor(BinaryNode<T>* node) {
+        if (node->_left) {
+            return node->_left;
+        }
+        else {
+            BinaryNode<T>* predecessor = NULL, *ancestor = _root;
+            while (ancestor->_data != node->_data) {
+                if (node->_data > ancestor->_data) {
+                    predecessor = ancestor;
+                    ancestor = ancestor->_right;
+                }
+                else {
+                    ancestor = ancestor->_left;
+                }
+            }
+            return predecessor;
+        }
     }
     
     // time: O(h) space: O()

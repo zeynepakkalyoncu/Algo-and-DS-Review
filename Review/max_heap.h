@@ -36,10 +36,12 @@ public:
     void max_heapify(int i) {
         int largest = i;
         
+        // choose the largest: current index or its left or right child
         if (arr[2 * i] > arr[largest]) largest = 2 * i;
         if (arr[2 * i + 1] > arr[largest]) largest = 2 * i + 1;
         if (largest == i) return;
         
+        // swap largest and current index
         T temp = arr[largest];
         arr[largest] = arr[i];
         arr[i] = temp;
