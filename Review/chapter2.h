@@ -102,7 +102,7 @@ SingleNode<int>* last_nth_queue(SinglyLinkedList<int>& list, int n) {
 
 ///////////////
 
-// time: O(n) space: O(1)
+// time: O(1) space: O(1)
 void delete_middle(SingleNode<int>* given) {
     SingleNode<int>* delNode = given->next;
     given->data = given->next->data;

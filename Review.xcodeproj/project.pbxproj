@@ -38,6 +38,7 @@
 		219765031F11379A00D45795 /* stack_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stack_array.h; sourceTree = "<group>"; };
 		219765041F1137A400D45795 /* queue_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue_array.h; sourceTree = "<group>"; };
 		219765061F18E6FE00D45795 /* epi_chapter5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = epi_chapter5.h; sourceTree = "<group>"; };
+		21B0959D1F4336060020413A /* chapter4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chapter4.h; sourceTree = "<group>"; };
 		21B8DF481F210DF700D37E7B /* sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sort.h; sourceTree = "<group>"; };
 		21B8DF491F24943400D37E7B /* search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search.h; sourceTree = "<group>"; };
 		21B8DF4A1F24A2B800D37E7B /* max_heap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = max_heap.h; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 				21B8DF4F1F275A0200D37E7B /* chapter1.h */,
 				21BAA8481F20AE60001CD225 /* chapter2.h */,
 				21B8DF4D1F26106800D37E7B /* chapter3.h */,
+				21B0959D1F4336060020413A /* chapter4.h */,
 				217BFEAA1F348A8600D72B01 /* chapter5.h */,
 				215AB1061F306DD5007DA598 /* chapter8.h */,
 				215AB1051F2E2D1A007DA598 /* chapter9.h */,

@@ -79,8 +79,29 @@ public:
     // time: O(n^2) space: O(1) - skewed tree
     void levelorderTraversalWithHelper(BinaryNode<T>* node) {
         int height = nodeHeight(node);
-        for (int i = 0; i < height; i++) {
+        for (int i = 1; i <= height; i++) {
             printLevel(node, i);
+        }
+    }
+    
+    // time: O(n) space: O(n)
+    void printLevels(BinaryNode<T>* node) {
+        queue<BinaryNode<T>*> q;
+        q.push(node);
+        
+        while (!q.empty()) {
+            int levelCount = q.size();
+            
+            if (levelCount > 0) {
+                while (levelCount) {
+                    BinaryNode<T>* front = q.pop();
+                    std::cout << front->data << " ";
+                    if (front->left) q.push(front->left);
+                    if (front->right) q.push(front->right);
+                    levelCount--;
+                }
+                std::cout << std::endl;
+            }
         }
     }
     

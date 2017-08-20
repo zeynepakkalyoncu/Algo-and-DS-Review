@@ -38,7 +38,7 @@ public:
         return root;
     }
     
-    // time: O(n) space: O(1)
+    // time: O(lgn) space: O(1)
     void union_sets(int id1, int id2) {
         // find roots of given ids
         int root1 = find(id1);
