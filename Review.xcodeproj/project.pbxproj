@@ -53,6 +53,7 @@
 		21B8DF531F29ECDD00D37E7B /* binary_tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = binary_tree.h; sourceTree = "<group>"; };
 		21B8DF541F29ECEA00D37E7B /* bst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bst.h; sourceTree = "<group>"; };
 		21BAA8481F20AE60001CD225 /* chapter2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chapter2.h; sourceTree = "<group>"; };
+		21D964D81F504EC80041E8D0 /* dp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dp.h; sourceTree = "<group>"; };
 		21E8DE9E1F32038900E06F5C /* graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = graph.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +134,7 @@
 				21B8DF481F210DF700D37E7B /* sort.h */,
 				21B8DF491F24943400D37E7B /* search.h */,
 				21B8DF4E1F266F1300D37E7B /* recursion.h */,
+				21D964D81F504EC80041E8D0 /* dp.h */,
 			);
 			name = Algorithms;
 			sourceTree = "<group>";
