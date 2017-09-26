@@ -33,12 +33,36 @@ public:
         }
     }
     
-    // time: O() space: O()
+    // time: O(n) space: O(n)
     void inorderTraversal(BinaryNode<T>* node) {
         if (node) {
             preorderTraversal(node->_left);
             std::cout << node->data << " ";
             preorderTraversal(node->_right);
+        }
+    }
+    
+    // time: O(n) space: O(n)
+    void inorderTraversalIterative(BinaryNode<T>* node) {
+        stack<BinaryNode<T>*> s;
+        BinaryNode<T>* curNode = node;
+        bool done = false;
+        
+        while (!done) {
+            if (curNode != nullptr) {
+                s.push(curNode);
+                curNode = curNode->left;
+            }
+            else {
+                if (!s.empty()) {
+                    // backtrack to parent
+                    curNode = s.top();
+                    s.pop();
+                    std::cout << curNode->data << " ";
+                    curNode = curNode->right;
+                }
+                else done = true;
+            }
         }
     }
     

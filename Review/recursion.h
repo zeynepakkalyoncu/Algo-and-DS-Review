@@ -13,11 +13,12 @@ void comb_n_k(int arr[], int data[], int start, int end, int index, int k) {
     else {
         for (int i = start; (i <= end) && (end - i + 1) >= k - index); i++) {
             data[index] = arr[i]; // fix arr[i] at data[index] and recur
+            
+            // handle duplicates
+            while (arr[i] == arr[i + 1]) i++;
+            
             comb_n_k(arr, data, i + 1, end, index + 1, k);
         }
-        
-        // handle duplicates
-        while (arr[i] == arr[i + 1]) i++;
     }
 }
 
@@ -31,10 +32,11 @@ void comb_n_k_2(int arr[], int data[], int i, int n, int index, int k) {
     else {
         // include arr[i]
         data[index] = arr[i];
-        comb_n_k_2(arr, data, i + 1, n, index + 1, k);
         
         // handle duplicates
         while (arr[i] == arr[i + 1]) i++;
+        
+        comb_n_k_2(arr, data, i + 1, n, index + 1, k);
         
         // exclude arr[i]
         comb_n_k_2(arr, data, i + 1, n, index, k);

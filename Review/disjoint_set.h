@@ -47,14 +47,14 @@ public:
         if (root1 != root2) {
             // weighted union: point smaller tree to the other's root
             if (_size[root1] < _size[root2]) {
-                _id[id1] = root2;
-                _size[id2] += _size[id1];
+                _id[root1] = root2;
+                _size[root2] += _size[root1];
             }
             else {
-                _id[id2] = root1;
-                _size[id1] += _size[id2];
+                _id[root2] = root1;
+                _size[root1] += _size[root2];
             }
-            _count++;
+            _count--;
         }
     }
     
